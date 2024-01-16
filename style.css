@@ -107,6 +107,24 @@ select option {
   width:35vh
  } ;
 }
+@media screen and (max-height : 640px){
+ .container{
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  min-height: 40vh;
+  width:40vh
+ } ;
+}
+@media screen and (max-height : 550px){
+ .container{
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  min-height: 40vh;
+  width:50vh
+ } ;
+}
 @media screen and (max-width : 330px){
  .container{
   background-color: white;
