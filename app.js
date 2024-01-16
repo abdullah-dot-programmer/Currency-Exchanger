@@ -183,16 +183,7 @@ dropdowns.forEach((select) => {
     updateFlag(event.target);
   });
 });
-
-const updateFlag = (element) => {
-  let  currcode = element.value; 
-  let countryCode = countryList[currcode];
-  let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`;
-  let img = element.parentElement.querySelector("img");
-  img.src = newSrc;
-};
-btn.addEventListener("click", async (event) => {
-  event.preventDefault();
+const updateExchangeRate = async () => {
   let amount = document.querySelector(".amount input");
   let amtVal = amount.value;
   // console.log(amtVal)
@@ -212,4 +203,20 @@ btn.addEventListener("click", async (event) => {
   // console.log(finalamount);
   msg.textContent = `${amtVal} ${fromCurr.value} = ${finalamount} ${toCurr.value}`;
   // console.log(msg.textContent);
+}
+
+const updateFlag = (element) => {
+  let  currcode = element.value; 
+  let countryCode = countryList[currcode];
+  let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`;
+  let img = element.parentElement.querySelector("img");
+  img.src = newSrc;
+};
+btn.addEventListener("click", async (event) => {
+  event.preventDefault();
+  updateExchangeRate();
 });
+window.addEventListener ("load", () => {
+  updateExchangeRate();
+
+})
